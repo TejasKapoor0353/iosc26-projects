@@ -5,7 +5,7 @@
 **Track:** Cybersecurity
 **Candidate:** Tejas Kapoor
 **Github Username**: TejasKapoor0353
-**Phone Number**: [Add or leave blank]
+**Phone Number**: Not provided
 **Email ID**: bondtejas03@gmail.com
 
 ---
