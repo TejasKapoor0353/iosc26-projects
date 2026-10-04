@@ -13,7 +13,7 @@
 ## 1. Overview
 
 ### What & Why
-[Write 2-3 sentences in your own words: what phishing detection problem you're solving, and why you picked this project from the Cybersecurity track.]
+I built a rule-based phishing email detector for the Cybersecurity track. I chose this because phishing is one of the most common real-world attack vectors, and I wanted to understand what actually makes an email suspicious instead of treating it as a black box. Using rules instead of machine learning meant every decision the detector makes is traceable back to a specific pattern, which felt more useful for a learning project.
 
 ### Expected Outcome
 A detector that can classify an email as phishing or legitimate by scoring it against known phishing patterns (spoofed domains, suspicious links, urgency language, credential requests, risky attachments), with a transparent explanation of why each verdict was reached.
@@ -46,7 +46,7 @@ An email (sender, subject, body, attachments) is passed into the detector. Each 
 ![System Diagram](./docs/images/system-overview.png)
 
 ### Key Decisions
-[Write in your own words: why weighted scoring instead of simple keyword counting; why whole-word matching was needed; why warning phrases like "never share your OTP" had to be excluded from triggering credential-request rules.]
+I used weighted scoring instead of a simple keyword count because not every red flag is equally serious -- a look-alike domain is a much stronger signal than a generic greeting, so it needed more weight. I also had to switch from substring matching to whole-word matching after discovering that "blocked" was triggering the word "locked." Similarly, I had to add a filter so that warning phrases like "never share your OTP" would not be mistaken for a phishing attempt, since the wording matters, not just the presence of a keyword.
 
 ---
 
@@ -59,7 +59,7 @@ An email (sender, subject, body, attachments) is passed into the detector. Each 
 - `src/demo.py` — command-line version of the same demonstration
 - `tests/test_detector.py` — unit tests covering the demo set and two specific bug fixes
 
-[Add 2-3 sentences on anything you changed or added yourself.]
+I wrote the detector and server code myself, and used Python's standard library only, per the no-ML requirement.
 
 ---
 
@@ -79,7 +79,7 @@ python src/server.py
 
 Both show, for all 10 emails: predicted verdict vs. actual label, the score, every indicator that fired, and a summary of correct classifications, false positives, and false negatives.
 
-[Insert your demo video link here, e.g. an unlisted YouTube video showing `python demo.py` running and the website working.]
+Not recorded yet.
 
 ---
 
